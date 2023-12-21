@@ -1,5 +1,5 @@
 # Chaotic-Employee-Tracked-Down
-Chaotic Employee Tracker: A Node.js app using Inquirer and MySQL for streamlined organization. Manage departments, roles, and employees effortlessly with an intuitive command-line interface, ensuring effective database interaction for a chaos-free work environment.
+Chaotic Employee Tracked Down: A Node.js app using Inquirer and MySQL for streamlined organization. Manage departments, roles, and employees effortlessly with an intuitive command-line interface, ensuring effective database interaction for a chaos-free work environment.
 
 
 ## Table of Contents
@@ -14,7 +14,7 @@ Chaotic Employee Tracker: A Node.js app using Inquirer and MySQL for streamlined
 
 
 ## Description
-A description will go here!
+Embark on the journey of reining in workplace chaos with 'Chaotic Employee Tracked Down.' This innovative Node.js application, powered by Inquirer and MySQL, is designed to empower businesses in wrangling disarray caused by unruly employees. Navigate through the tumultuous world of organizational management, where this command-line tool becomes the beacon for tracking down chaotic elements, bringing order to departments, roles, and employees. With its user-friendly interface, seamlessly view, add, and update data, establishing a harmonious work environment amidst the chaos of unruly employees.
 
 
 ### Screenshots
