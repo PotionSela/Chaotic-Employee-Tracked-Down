@@ -1,0 +1,28 @@
+{
+  "name": "chaotic-employee-tracked-down",
+  "version": "1.0.0",
+  "description": "A chaos employee tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PotionSela/Chaotic-Employee-Tracked-Down.git"
+  },
+  "keywords": [
+    "Chaos",
+    "employee",
+    "tracker",
+    "employee",
+    "tracker",
+    "mysql",
+    "inquirer"
+  ],
+  "author": "Gisela Mata",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/PotionSela/Chaotic-Employee-Tracked-Down/issues"
+  },
+  "homepage": "https://github.com/PotionSela/Chaotic-Employee-Tracked-Down#readme"
+}
