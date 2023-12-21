@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/PotionSela/Chaotic-Employee-Tracked-Down/issues"
   },
-  "homepage": "https://github.com/PotionSela/Chaotic-Employee-Tracked-Down#readme"
+  "homepage": "https://github.com/PotionSela/Chaotic-Employee-Tracked-Down#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
