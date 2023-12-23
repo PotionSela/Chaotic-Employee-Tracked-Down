@@ -17,10 +17,10 @@ VALUES (1, "Manager", 46.9, 1 ),
        (7, "Marketing Coordinator", 55.9, 6);
 
 INSERT INTO employee ( id, first_name, last_name, role_id, manager_id )
-VALUES (1, "Manager", 46.9, 1 ),
-       (2, "Software Developer", 80.0, 6),
-       (3, "HR Specialist", 55.5, 2),
-       (4, "Sales Representative", 60.0, 4),
-       (5, "Customer Support Agent", 45.0, 3),
-       (6, "Operations Coordinator", 55.0, 5),
-       (7, "Marketing Coordinator", 55.9, 6);
+VALUES (13, "Millie", "Soucier", 1, 15 ),
+       (17, "Catherine", "Housier", 1 , 18 ),
+       (20, "Gabrella", "Monsume", 4 , 25 ),
+       (24, "Howard", "Smith", 7, 16),
+       (10, "Janice", "Flamingo", 6 , 28),
+       (27, "Nicole", "Palm", 6 , 18 ),
+       (5, "Mickayla", "Gnose", 7 , 14 );
