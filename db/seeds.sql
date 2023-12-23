@@ -8,10 +8,10 @@ VALUES (1, "Legal"),
        (7, "Finance");
 
 INSERT INTO role ( id, title, salary, department_id )
-VALUES (),
-       (),
-       (),
-       (),
-       (),
-       (),
-       ();
+VALUES (1, "Manager", 46.9, 1 ),
+       (2, "Software Developer", 80.0, 6),
+       (3, "HR Specialist", 55.5, 2),
+       (4, "Sales Representative", 60.0, 4),
+       (5, "Customer Support Agent", 45.0, 3),
+       (6, "Operations Coordinator", 55.0, 5),
+       (7, "Marketing Coordinator", 55.9, 6);
