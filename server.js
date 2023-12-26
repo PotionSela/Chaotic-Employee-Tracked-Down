@@ -27,3 +27,24 @@ const db = mysql.createConnection(
     },
     console.log(`Connected to the tracker_db database.`)
 );
+
+async function promptManager() {
+  const answers = await inquirer.prompt ([
+    {
+      type: "list",
+      name: "menu",
+      messaage: "What would you like to do?",
+      choices: [
+        "View all departments",
+        "View all roles",
+        "View all employees",
+        "Add a department",
+        "Add a role",
+        "Add employee",
+        "Update an employees' role"
+      ]
+    }
+  ]);
+
+  
+}
