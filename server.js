@@ -64,4 +64,12 @@ async function promptManager() {
     });
   }
 
+  if (answers.menu === "View all employees") {
+    // Select answer for employees
+    db.query(`SELECT * FROM employee`, (err, result) => {
+      if (err) throw err
+      console.table (result)
+      promptManager();
+    });
+  }
 }
