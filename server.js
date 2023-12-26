@@ -166,3 +166,9 @@ async function promptManager() {
     })
   }
 }
+
+// Calling 
+db.connect (err => {
+  if (err) throw err
+  promptManager();
+})
