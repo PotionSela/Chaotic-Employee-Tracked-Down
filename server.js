@@ -46,5 +46,14 @@ async function promptManager() {
     }
   ]);
 
+  if (answers.menu === "View all departments") {
+    // const sql `select * from department`
+    db.query(`SELECT * FROM department`, (err, result) => {
+      if (err) throw err
+      console.table (result)
+      promptManager();
+    });
+  }
+
   
 }
