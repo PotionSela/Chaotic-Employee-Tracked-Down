@@ -136,12 +136,33 @@ async function promptManager() {
         type: "input",
         name: "ManagerID",
         message: "What is the new employees' manager ID?"
-      },
+      }
     ])
     db.query (`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`,[answers.firstName, answers.lastName, answers.newRole, answers.managerID], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
     });
+  }
+
+  if (answers.menu === "Update an employees' role") {
+    // questions for updating an employee
+    const answers = await inquirer.prompt ([
+      {
+        type: "input",
+        name: "updateEmployee",
+        message: "What is the emplyees' ID?"
+      },
+      {
+        type: "input",
+        name: "updateRole",
+        message: "What is the role ID?"
+      }
+    ])
+    db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, [answers.updateRole, answers.updateEmployee], (err, result) => {
+      if (err) throw err
+      console.table (result)
+      promptManager();
+    })
   }
 }
