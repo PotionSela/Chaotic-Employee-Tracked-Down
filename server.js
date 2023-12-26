@@ -72,4 +72,21 @@ async function promptManager() {
       promptManager();
     });
   }
+
+  if (answers.menu === "Add department") {
+    // questions for adding a new department
+    const answers = await inquirer.prompt ([
+      {
+        type: "input",
+        name: "newDepartment",
+        message: "What is the name of the new department?"
+      }
+    ])
+    db.query(`INSERT INTO department (department_name) VALUES (?)`, [answers.newDepartment], (err, result) => {
+      if (err) throw err
+      console.table (result)
+      promptManager();
+    });
+  }
+  
 }
