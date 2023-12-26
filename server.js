@@ -88,5 +88,29 @@ async function promptManager() {
       promptManager();
     });
   }
-  
+  if (answers.menu === "Add role") {
+    // questions for adding a new role
+    const answers = await inquirer.prompt ([
+      {
+        type: "input",
+        name: "newRole",
+        message: "What is the new role?"
+      },
+      {
+        type: "input",
+        name: "newSalary",
+        message: "What is the salary?"
+      },
+      {
+        type: "input",
+        name: "newDepartmentID",
+        message: "What is the department ID?"
+      }
+    ])
+    db.query (`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`,[answers.newRole, answers.newSalary, answers.newDepartID], (err, result) => {
+      if (err) throw err
+      console.table (result)
+      promptManager();
+    });
+  }
 }
