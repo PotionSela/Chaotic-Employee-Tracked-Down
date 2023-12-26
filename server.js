@@ -47,7 +47,7 @@ async function promptManager() {
   ]);
 
   if (answers.menu === "View all departments") {
-    // const sql `select * from department`
+    // select answer for departments
     db.query(`SELECT * FROM department`, (err, result) => {
       if (err) throw err
       console.table (result)
@@ -55,5 +55,13 @@ async function promptManager() {
     });
   }
 
-  
+  if (answers.menu === "View all roles") {
+    // Select answer for roles
+    db.query(`SELECT * FROM role`, (err, result) => {
+      if (err) throw err
+      console.table (result)
+      promptManager();
+    });
+  }
+
 }
