@@ -19,12 +19,12 @@ Embark on the journey of reining in workplace chaos with 'Chaotic Employee Track
 
 ### Screenshots
 **Screenshots of application:**
-![example-1](./example-goes-here)
-![example-2](./example-goes-here)
+![example-1](./assets/images/example1.png)
+![example-2](./assets/images/example2.png)
 
 
 ## Technologies Used
-This project is powered by X, utilizes X, and the file system module (node package manager). It also employs X for other things.
+This project is powered by Node.js, utilizes Inquirer for user prompts, and MySQL for database interaction. It also employs the file system module (node package manager). It also utilizes npm packages such as inquirer@8.2.4 for user prompts and jest for testing.
 
 
 ## Installation
@@ -32,21 +32,16 @@ This project is powered by X, utilizes X, and the file system module (node packa
 2. Open in VS Code. If you do not have VS Code, install it.
 3. Using the terminal, install Node.js v16.
 4. Once Node.js v16 is installed, in the terminal, run the command `npm init -y` to initialize and create a `package.json` where project files will be stored.
-5. Next, use the terminal to run the command `npm i` to install the dependencies associated with this application. Developers may need to install X and X directly from the command line. To do so, the command for X will be `npm i inquirer@8.2.4` to install v9.2.12 of inquirer, and `npm i jest` to install the latest version of jest.
-6. To run the application, within the terminal, type the command `node index.js`.
+5. Next, use the terminal to run the command `npm i` to install the dependencies associated with this application. Developers may need to install inquirer@8.2.4 and jest directly from the command line. To do so, the command for inquirer will be `npm i inquirer@8.2.4`, and `npm i jest` to install the latest version of jest.
+6. To run the application, within the terminal, type the command `node server.js`.
 
 
 ## Features
-Features of this application include the user's ability to X, entirely from the command line.
-OR
-**Note of X:** Easily create new notes with a title and content.
-**Responsive Interface:** User-friendly design for an optimal experience.
-**Persistent Storage:** All notes are saved and retrieved from a JSON database.
-
+view all departments, roles, and employees, add new departments, roles, and employees, update employee roles, and additional functionality such as updating employee managers, viewing employees by manager, viewing employees by department, deleting departments, roles, and employees, and calculating and displaying the total utilized budget of a department.
 
 
 ## Usage Information
-To run this application, use the command line to navigate to the directory of the application, install all dependencies (`npm i`), then type the command `node index.js`. You will then be taken through a series of questions. Once you've done X you can then do X.
+To run this application, use the command line to navigate to the directory of the application, install all dependencies (`npm i`), then type the command `node server.js`. You will then be taken through a series of questions. Once you've provided the necessary input, the application will execute the corresponding actions, allowing you to manage your employee database effectively.
 
 
 ## Contribution Guidelines
