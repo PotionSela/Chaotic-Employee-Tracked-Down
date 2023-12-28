@@ -30,13 +30,7 @@ async function promptManager() {
         "Add a department",
         "Add a role",
         "Add employee",
-        "Update an employees' role",
-        "Update employee managers",
-        "View employees by manager",
-        "View employees by department",
-        "Delete department",
-        "Delete role",
-        "Delete employee"
+        "Update an employees' role"
       ]
     }
   ]);
@@ -147,7 +141,7 @@ async function promptManager() {
 
   if (answers.menu === "Update an employees' role") {
     // questions for updating an employee
-    const answers = await inquirer.prompt ([
+    const employeeRoleAnswers = await inquirer.prompt ([
       {
         type: "input",
         name: "updateEmployee",
@@ -159,7 +153,7 @@ async function promptManager() {
         message: "What is the role ID?"
       }
     ])
-    db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, [answers.updateRole, answers.updateEmployee], (err, result) => {
+    db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, [employeeRoleAnswers.updateRole, employeeRoleAnswers.updateEmployee], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
