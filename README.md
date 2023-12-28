@@ -5,6 +5,7 @@ Chaotic Employee Tracked Down: A Node.js app using Inquirer and MySQL for stream
 ## Table of Contents
 - [Description](#description)
 - [Screenshots](#screenshots)
+- [Video Walkthrough](#video-walkthrough)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Features](#features)
@@ -23,6 +24,10 @@ Embark on the journey of reining in workplace chaos with 'Chaotic Employee Track
 ![example-2](./assets/images/example2.png)
 ![example-3](./assets/images/example3.png)
 
+
+### Video Walkthrough
+You can watch the video of this application being used here:
+[![Video]]()
 
 ## Technologies Used
 This project is powered by Node.js, utilizes Inquirer for user prompts, and MySQL for database interaction. It also employs the file system module (node package manager). It also utilizes npm packages such as inquirer@8.2.4 for user prompts and jest for testing.
