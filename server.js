@@ -30,7 +30,13 @@ async function promptManager() {
         "Add a department",
         "Add a role",
         "Add employee",
-        "Update an employees' role"
+        "Update an employees' role",
+        "Update employee managers",
+        "View employees by manager",
+        "View employees by department",
+        "Delete department",
+        "Delete role",
+        "Delete employee"
       ]
     }
   ]);
