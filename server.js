@@ -67,11 +67,16 @@ async function promptManager() {
     const departmentAnswers = await inquirer.prompt ([
       {
         type: "input",
+        name: "newID",
+        message: "What is the ID of the new department?"
+      },
+      {
+        type: "input",
         name: "newDepartment",
         message: "What is the name of the new department?"
       }
     ])
-    db.query(`INSERT INTO department (department_name) VALUES (?)`, [answers.newDepartment], (err, result) => {
+    db.query(`INSERT INTO department (id, department_name) VALUES (?, ?)`, [departmentAnswers.newID, departmentAnswers.newDepartment], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
@@ -96,7 +101,7 @@ async function promptManager() {
         message: "What is the department ID?"
       }
     ])
-    db.query (`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`,[answers.newRole, answers.newSalary, answers.newDepartmentID], (err, result) => {
+    db.query (`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`,[roleAnswers.newRole, roleAnswers.newSalary, roleAnswers.newDepartmentID], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
