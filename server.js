@@ -6,19 +6,19 @@ const inquirer = require("inquirer");
 
 // Creating a connection to database
 const db = mysql.createConnection(
-    {
-        host: 'localhost',
-        // MySQL username
-        user: 'root',
-        // MySQL password
-        password: '',
-        database: 'tracker_db',
-    },
-    console.log(`Connected to the tracker_db database.`)
+  {
+    host: 'localhost',
+    // MySQL username
+    user: 'root',
+    // MySQL password
+    password: '',
+    database: 'tracker_db',
+  },
+  console.log(`Connected to the tracker_db database.`)
 );
 
 async function promptManager() {
-  const answers = await inquirer.prompt ([
+  const answers = await inquirer.prompt([
     {
       type: "list",
       name: "menu",
@@ -39,7 +39,7 @@ async function promptManager() {
     // select answer for departments
     db.query(`SELECT * FROM department`, (err, result) => {
       if (err) throw err
-      console.table (result)
+      console.table(result)
       promptManager();
     });
   }
@@ -48,7 +48,7 @@ async function promptManager() {
     // Select answer for roles
     db.query(`SELECT * FROM role`, (err, result) => {
       if (err) throw err
-      console.table (result)
+      console.table(result)
       promptManager();
     });
   }
@@ -57,14 +57,14 @@ async function promptManager() {
     // Select answer for employees
     db.query(`SELECT * FROM employee`, (err, result) => {
       if (err) throw err
-      console.table (result)
+      console.table(result)
       promptManager();
     });
   }
 
-  if (answers.menu === "Add department") {
+  if (answers.menu === "Add a department") {
     // questions for adding a new department
-    const departmentAnswers = await inquirer.prompt ([
+    const departmentAnswers = await inquirer.prompt([
       {
         type: "input",
         name: "newID",
@@ -72,22 +72,22 @@ async function promptManager() {
       },
       {
         type: "input",
-        name: "newDepartment",
+        name: "department_name",
         message: "What is the name of the new department?"
       }
-    ])
-    db.query(`INSERT INTO department (id, department_name) VALUES (?, ?)`, [departmentAnswers.newID, departmentAnswers.newDepartment], (err, result) => {
-      if (err) throw err
-      console.table (result)
+    ]);
+    db.query(`INSERT INTO department (id, department_name) VALUES (?, ?)`, [departmentAnswers.newID, departmentAnswers.department_name], (err, result) => {
+      if (err) throw err;
+      console.table(result);
       promptManager();
     });
   }
-  if (answers.menu === "Add role") {
+  if (answers.menu === "Add a role") {
     // questions for adding a new role
-    const roleAnswers = await inquirer.prompt ([
+    const roleAnswers = await inquirer.prompt([
       {
         type: "input",
-        name: "newRole",
+        name: "title",
         message: "What is the new role?"
       },
       {
@@ -100,17 +100,17 @@ async function promptManager() {
         name: "newDepartmentID",
         message: "What is the department ID?"
       }
-    ])
-    db.query (`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`,[roleAnswers.newRole, roleAnswers.newSalary, roleAnswers.newDepartmentID], (err, result) => {
-      if (err) throw err
-      console.table (result)
+    ]);
+    db.query(`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`, [roleAnswers.title, roleAnswers.newSalary, roleAnswers.newDepartmentID], (err, result) => {
+      if (err) throw err;
+      console.table(result);
       promptManager();
     });
   }
 
   if (answers.menu === "Add employee") {
     // questions for adding new employee
-    const employeeAnswers = await inquirer.prompt ([
+    const employeeAnswers = await inquirer.prompt([
       {
         type: "input",
         name: "firstName",
@@ -132,16 +132,16 @@ async function promptManager() {
         message: "What is the new employees' manager ID?"
       }
     ])
-    db.query (`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`,[employeeAnswers.firstName, employeeAnswers.lastName, employeeAnswers.newRoleID, employeeAnswers.ManagerID], (err, result) => {
+    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [employeeAnswers.firstName, employeeAnswers.lastName, employeeAnswers.newRoleID, employeeAnswers.ManagerID], (err, result) => {
       if (err) throw err
-      console.table (result)
+      console.table(result)
       promptManager();
     });
   }
 
   if (answers.menu === "Update an employees' role") {
     // questions for updating an employee
-    const employeeRoleAnswers = await inquirer.prompt ([
+    const employeeRoleAnswers = await inquirer.prompt([
       {
         type: "input",
         name: "updateEmployee",
@@ -155,14 +155,14 @@ async function promptManager() {
     ])
     db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, [employeeRoleAnswers.updateRole, employeeRoleAnswers.updateEmployee], (err, result) => {
       if (err) throw err
-      console.table (result)
+      console.table(result)
       promptManager();
     })
   }
 }
 
 // Calling 
-db.connect (err => {
+db.connect(err => {
   if (err) throw err
   promptManager();
 })
