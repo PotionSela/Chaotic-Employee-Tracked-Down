@@ -21,6 +21,7 @@ Embark on the journey of reining in workplace chaos with 'Chaotic Employee Track
 **Screenshots of application:**
 ![example-1](./assets/images/example1.png)
 ![example-2](./assets/images/example2.png)
+![example-3](./assets/images/example3.png)
 
 
 ## Technologies Used

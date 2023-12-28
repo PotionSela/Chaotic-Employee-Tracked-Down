@@ -22,7 +22,7 @@ async function promptManager() {
     {
       type: "list",
       name: "menu",
-      messaage: "What would you like to do?",
+      message: "What would you like to do?",
       choices: [
         "View all departments",
         "View all roles",
@@ -64,7 +64,7 @@ async function promptManager() {
 
   if (answers.menu === "Add department") {
     // questions for adding a new department
-    const answers = await inquirer.prompt ([
+    const departmentAnswers = await inquirer.prompt ([
       {
         type: "input",
         name: "newDepartment",
@@ -79,7 +79,7 @@ async function promptManager() {
   }
   if (answers.menu === "Add role") {
     // questions for adding a new role
-    const answers = await inquirer.prompt ([
+    const roleAnswers = await inquirer.prompt ([
       {
         type: "input",
         name: "newRole",
@@ -96,7 +96,7 @@ async function promptManager() {
         message: "What is the department ID?"
       }
     ])
-    db.query (`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`,[answers.newRole, answers.newSalary, answers.newDepartID], (err, result) => {
+    db.query (`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`,[answers.newRole, answers.newSalary, answers.newDepartmentID], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
@@ -105,7 +105,7 @@ async function promptManager() {
 
   if (answers.menu === "Add employee") {
     // questions for adding new employee
-    const answers = await inquirer.prompt ([
+    const employeeAnswers = await inquirer.prompt ([
       {
         type: "input",
         name: "firstName",
@@ -127,7 +127,7 @@ async function promptManager() {
         message: "What is the new employees' manager ID?"
       }
     ])
-    db.query (`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`,[answers.firstName, answers.lastName, answers.newRole, answers.managerID], (err, result) => {
+    db.query (`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`,[employeeAnswers.firstName, employeeAnswers.lastName, employeeAnswers.newRole, employeeAnswers.ManagerID], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
