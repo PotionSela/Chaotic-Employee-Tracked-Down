@@ -27,7 +27,7 @@ Embark on the journey of reining in workplace chaos with 'Chaotic Employee Track
 
 ### Video Walkthrough
 You can watch the video of this application being used here:
-[![Video]]()
+[![Video]](https://drive.google.com/file/d/1AZpYuEeOiCJQayOHS3ZTWwf7VEYzwyXj/view)
 
 ## Technologies Used
 This project is powered by Node.js, utilizes Inquirer for user prompts, and MySQL for database interaction. It also employs the file system module (node package manager). It also utilizes npm packages such as inquirer@8.2.4 for user prompts and jest for testing.
