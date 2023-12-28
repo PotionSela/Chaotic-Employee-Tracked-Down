@@ -123,7 +123,7 @@ async function promptManager() {
       },
       {
         type: "input",
-        name: "newRole",
+        name: "newRoleID",
         message: "What is the new employees' role ID?"
       },
       {
@@ -132,7 +132,7 @@ async function promptManager() {
         message: "What is the new employees' manager ID?"
       }
     ])
-    db.query (`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`,[employeeAnswers.firstName, employeeAnswers.lastName, employeeAnswers.newRole, employeeAnswers.ManagerID], (err, result) => {
+    db.query (`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`,[employeeAnswers.firstName, employeeAnswers.lastName, employeeAnswers.newRoleID, employeeAnswers.ManagerID], (err, result) => {
       if (err) throw err
       console.table (result)
       promptManager();
